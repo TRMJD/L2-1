@@ -62,4 +62,5 @@ rectangleType rectangleType::operator - (const rectangleType&) const {
 	if (finalLength < 0 || finalWidth < 0) {
 		cout << "ERROR" << endl;
 	}
-}//test comment
+//PART C: Overload relational operator by considering
+//the areas of the rectangle, if they are equal or not equal

@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="L2-2.cpp" />
+    <ClCompile Include="L2-1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rectangleType.h" />
