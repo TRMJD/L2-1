@@ -62,4 +62,4 @@ rectangleType rectangleType::operator - (const rectangleType&) const {
 	if (finalLength < 0 || finalWidth < 0) {
 		cout << "ERROR" << endl;
 	}
-}
+}//test comment
