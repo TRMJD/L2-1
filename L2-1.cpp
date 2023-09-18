@@ -31,4 +31,5 @@
 '*       Date    Changed  Rel Ver Mod Purpose                          *
 '* 09/12/2023   cdefiest  000.001.000 Initial release of program       *
 '* 09/12/2023   cdefiest  000.002.000 completed parts A and B          *
+'* 09/14/2023   cdefiest  000.002.000 fixed redefining error           *
 '* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
