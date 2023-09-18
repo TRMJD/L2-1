@@ -6,6 +6,7 @@
 using namespace std;
 
 class rectangleType {
+public:
 	double area() const;
 	double getLength() const;
 	double getWidth() const;
@@ -30,7 +31,7 @@ class rectangleType {
 	rectangleType(double l, double w);
 
 protected:
-	double length, width, area, perimeter;
+	double dblLength, dblWidth, dblArea, dblPerimeter;
 	
 
 
@@ -39,16 +40,16 @@ protected:
 //PART A: Overloading the pre increment operator
 rectangleType rectangleType::operator ++ () {
 	rectangleType rectangle;
-	rectangle.length = rectangle.length++;
-	rectangle.width = rectangle.width++;
+	rectangle.dblLength = rectangle.dblLength++;
+	rectangle.dblWidth = rectangle.dblWidth++;
 	return rectangle;
 }
 
 //post incremenet operator
 rectangleType rectangleType::operator ++ (int) {
 	rectangleType rectangle;
-	rectangle.length = ++rectangle.length;
-	rectangle.width = ++rectangle.width;
+	rectangle.dblLength = ++rectangle.dblLength;
+	rectangle.dblWidth = ++rectangle.dblWidth;
 	return rectangle;
 }
 
@@ -56,11 +57,12 @@ rectangleType rectangleType::operator ++ (int) {
 inline rectangleType rectangleType::operator - (const rectangleType&) const {
 	rectangleType rectangle1;
 	rectangleType rectangle2;
-	int finalLength, finalWidth;
-	finalLength = rectangle2.length - rectangle1.length;
-	finalWidth = rectangle2.width - rectangle1.width;
+	double finalLength, finalWidth;
+	finalLength = rectangle2.dblLength - rectangle1.dblLength;
+	finalWidth = rectangle2.dblWidth - rectangle1.dblWidth;
 	if (finalLength < 0 || finalWidth < 0) {
 		cout << "ERROR" << endl;
+	}
 }
 
 //PART C: Overload relational operators by considering
@@ -91,46 +93,46 @@ bool rectangleType::operator > (const rectangleType& rectangle) const {
 //PART D: overloading other functions
 //stream functions
 ostream& operator << (ostream& osRectangle, const rectangleType& rectangle) {
-	osRectangle << "Length = " << rectangle.length
-		<< " Width = " << rectangle.width;
+	osRectangle << "Length = " << rectangle.dblLength
+		<< " Width = " << rectangle.dblWidth;
 	return osRectangle;
 }
 
 istream& operator >> (istream& isRectangle, rectangleType& rectangle) {
-	isRectangle >> rectangle.length >> rectangle.width;
+	isRectangle >> rectangle.dblLength >> rectangle.dblWidth;
 	return isRectangle;
 }
 
 //arithmetic operations
 rectangleType rectangleType::operator * (const rectangleType& rectangle) const {
 	rectangleType rectangle1;
-	rectangle1.width = width * rectangle.width;
-	rectangle1.length = length * rectangle.length;
+	rectangle1.dblWidth = dblWidth * rectangle.dblWidth;
+	rectangle1.dblLength = dblLength * rectangle.dblLength;
 	return rectangle1;
 }
 
 rectangleType rectangleType::operator + (const rectangleType& rectangle) const {
 	rectangleType rectangle1;
-	rectangle1.length = length + rectangle.length;
-	rectangle1.width = width + rectangle.width;
+	rectangle1.dblLength = dblLength + rectangle.dblLength;
+	rectangle1.dblWidth = dblWidth + rectangle.dblWidth;
 	return rectangle1;
 }
 
 rectangleType rectangleType::operator -- () {
-	if (length > 0 && width > 0) {
+	if (dblLength > 0 && dblWidth > 0) {
 		rectangleType rectangle;
-		rectangle.length = --length;
-		rectangle.width = --width;
+		rectangle.dblLength = --dblLength;
+		rectangle.dblWidth = --dblWidth;
 		return rectangle;
 	}
 	else cout << "ERROR\n";
 }
 
 rectangleType rectangleType::operator -- (int u) {
-	if (length > 0 && width > 0) {
+	if (dblLength > 0 && dblWidth > 0) {
 		rectangleType rectangle;
-		rectangle.length = length--;
-		rectangle.width = width--;
+		rectangle.dblLength = dblLength--;
+		rectangle.dblWidth = dblWidth--;
 		return rectangle;
 	}
 	else cout << "ERROR\n";
@@ -139,30 +141,30 @@ rectangleType rectangleType::operator -- (int u) {
 
 void rectangleType::setDimension(double l, double w) {
 	if (l >= 0)
-		length = l;
+		dblLength = l;
 	else
-		length = 0;
+		dblLength = 0;
 
 	if (w >= 0)
-		width = w;
+		dblWidth = w;
 	else
-		width = 0;
+		dblWidth = 0;
 }
 
 double rectangleType::getLength() const {
-	return length;
+	return dblLength;
 }
 
 double rectangleType::getWidth()const {
-	return width;
+	return dblWidth;
 }
 
 double rectangleType::area() const {
-	return length * width;
+	return dblLength * dblWidth;
 }
 
 double rectangleType::perimeter() const {
-	return 2 * (length + width);
+	return 2 * (dblLength + dblWidth);
 }
 
 rectangleType::rectangleType(double l, double w) {
@@ -170,6 +172,6 @@ rectangleType::rectangleType(double l, double w) {
 }
 
 rectangleType::rectangleType() {
-	length = 0;
-	width = 0;
+	dblLength = 0;
+	dblWidth = 0;
 }
