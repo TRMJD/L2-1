@@ -119,24 +119,27 @@ rectangleType rectangleType::operator + (const rectangleType& rectangle) const {
 }
 
 rectangleType rectangleType::operator -- () {
+	rectangleType rectangle;
 	if (dblLength > 0 && dblWidth > 0) {
-		rectangleType rectangle;
+		
 		rectangle.dblLength = --dblLength;
 		rectangle.dblWidth = --dblWidth;
 		return rectangle;
 	}
 	else cout << "ERROR\n";
+	return rectangle;
 }
 
 rectangleType rectangleType::operator -- (int u) {
+	rectangleType rectangle;
 	if (dblLength > 0 && dblWidth > 0) {
-		rectangleType rectangle;
+		
 		rectangle.dblLength = dblLength--;
 		rectangle.dblWidth = dblWidth--;
 		return rectangle;
 	}
 	else cout << "ERROR\n";
-
+	return rectangle;
 }
 
 void rectangleType::setDimension(double l, double w) {
@@ -174,4 +177,5 @@ rectangleType::rectangleType(double l, double w) {
 rectangleType::rectangleType() {
 	dblLength = 0;
 	dblWidth = 0;
+	
 }
