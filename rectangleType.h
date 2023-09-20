@@ -142,6 +142,7 @@ rectangleType rectangleType::operator -- (int u) {
 	return rectangle;
 }
 
+
 void rectangleType::setDimension(double l, double w) {
 	if (l >= 0)
 		dblLength = l;

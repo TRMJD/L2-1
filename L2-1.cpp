@@ -31,33 +31,35 @@
 '*       Date    Changed  Rel Ver Mod Purpose                          *
 '* 09/12/2023   cdefiest  000.001.000 Initial release of program       *
 '* 09/12/2023   cdefiest  000.002.000 completed parts A and B          *
-'* 09/14/2023   cdefiest  000.002.000 fixed redefining error           *
+'* 09/14/2023   cdefiest  000.003.000 fixed redefining error           *
+'* 09/19/2023   kyabut    000.004.000 part E and heading line          *
 '* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 #include "rectangleType.h"
 using namespace std;
 
 int main() {
-	rectangleType rectangle1(10, 5);
-	rectangleType rectangle2(8, 7);
+	rectangleType rectangle1(12, 7);
+	rectangleType rectangle2(9, 6);
 	rectangleType rectangle3;
 	rectangleType rectangle4;
+	rectangleType rectangle5;
 
 	cout << "rectangle1: " << rectangle1 << endl;
-
-	cout << "rectangle2: " << rectangle2 << endl;
+	cout << "rectangle2: " << rectangle2 << "\n" << endl;
 
 	rectangle3 = rectangle1 + rectangle2;
-
-	cout << "rectangle3: " << rectangle3 << endl;
+	cout << "rectangle3 = rectangle1 + rectangle2" << endl;
+	cout << "rectangle3: " << rectangle3 << "\n" << endl;
 
 	rectangle4 = rectangle1 * rectangle2;
+	cout << "rectangle4 = rectangle1 * rectangle2" << endl;
+	cout << "rectangle4: " << rectangle4 << "\n" << endl;
 
-	cout << "rectangle4: " << rectangle4 << endl;
-
-	if (rectangle1 > rectangle2)
+	if (rectangle1 > rectangle2) {
 		cout << "Area of rectangle1 is greater than the area "
-		<< "of rectangle2 ." << endl;
-	else
+			<< "of rectangle2 ." << endl;
+	}
+	else 
 		cout << "Area of rectangle1 is less than or equal to the area "
 		<< "of rectangle2 ." << endl;
 
