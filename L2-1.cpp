@@ -55,6 +55,7 @@ int main() {
 	cout << "rectangle4 = rectangle1 * rectangle2" << endl;
 	cout << "rectangle4: " << rectangle4 << "\n" << endl;
 
+
 	if (rectangle1 > rectangle2) {
 		cout << "Area of rectangle1 is greater than the area "
 			<< "of rectangle2 ." << endl;

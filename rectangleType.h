@@ -176,6 +176,7 @@ rectangleType::rectangleType(double l, double w) {
 }
 
 rectangleType::rectangleType() {
+	cout << "Sinigang\t" << "L2-1\t" << "L2-1.exe" << endl;
 	dblLength = 0;
 	dblWidth = 0;
 	
