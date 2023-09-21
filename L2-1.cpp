@@ -38,42 +38,46 @@
 using namespace std;
 
 int main() {
-	rectangleType rectangle1(12, 7);
-	rectangleType rectangle2(9, 6);
-	rectangleType rectangle3;
-	rectangleType rectangle4;
-	rectangleType rectangle5;
+	//create a program that simulates the overloaded functions
+	//in rectangleType.h by showing arithmetic operations
+	rectangleType firstRec(12, 7);
+	rectangleType secondRec(9, 6);
+	
 
-	cout << "rectangle1: " << rectangle1 << endl;
-	cout << "rectangle2: " << rectangle2 << "\n" << endl;
+	cout << "First Rectangle: " << firstRec << endl;
+	cout << "Second Rectangle: " << secondRec << "\n" << endl;
+	
+	//create another rectangle that is the sum of the first and second rectangle
+	rectangleType thirdRec;
+	thirdRec = firstRec + secondRec;
+	cout << "Sum of Rectangle 1 and 2" << endl;
+	cout << "Third Rectangle: " << thirdRec << "\n" << endl;
+	
+	//create another rectangle that is the product of the first and second rectangle
+	rectangleType fourthRect;
+	fourthRect = firstRec * secondRec;
+	cout << "Product of rectangle 1 and 2" << endl;
+	cout << "Fourth Rectangle: " << fourthRect << "\n" << endl;
 
-	rectangle3 = rectangle1 + rectangle2;
-	cout << "rectangle3 = rectangle1 + rectangle2" << endl;
-	cout << "rectangle3: " << rectangle3 << "\n" << endl;
-
-	rectangle4 = rectangle1 * rectangle2;
-	cout << "rectangle4 = rectangle1 * rectangle2" << endl;
-	cout << "rectangle4: " << rectangle4 << "\n" << endl;
-
-
-	if (rectangle1 > rectangle2) {
-		cout << "Area of rectangle1 is greater than the area "
-			<< "of rectangle2 ." << endl;
+	//compare the area of the first and second rectangle
+	if (firstRec > secondRec) {
+		cout << "Area of the first rectangle is greater than the second" << endl;
 	}
-	else 
-		cout << "Area of rectangle1 is less than or equal to the area "
-		<< "of rectangle2 ." << endl;
+	else if (secondRec > firstRec) {
+		cout << "Area of second rectangle is greater than the first" << endl;
+	}
+	else cout << "Area is the same" << endl;
 
-	rectangle1++;
+	firstRec++;
 
 	cout << "After increment the length and width of "
 		<< "rectangle1 by one unit, \nrectangle1: "
-		<< rectangle1 << endl;
+		<< firstRec << endl;
 
-	rectangle4 = ++rectangle3;
+	fourthRect = ++thirdRec;
 
-	cout << "New dimension of rectangle3: " << rectangle3 << endl;
-	cout << "New dimension of rectangle4: " << rectangle4 << endl;
+	cout << "New dimension of Third Rectangle: " << thirdRec << endl;
+	cout << "New dimension of Fourth Rectangle: " << fourthRect << endl;
 
 	return 0;
 }
