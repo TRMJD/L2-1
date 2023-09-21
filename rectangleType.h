@@ -5,6 +5,16 @@
 
 using namespace std;
 
+static int instanceCount;
+class SmallClass {
+public: 
+	SmallClass()
+	{
+		if (instanceCount++ == 0)
+			cout << "Sinigang\t" << "L2-1\t" << "L2-1.exe\n" << endl;
+	}
+};
+
 class rectangleType {
 public:
 	double area() const;
@@ -32,9 +42,6 @@ public:
 
 protected:
 	double dblLength, dblWidth, dblArea, dblPerimeter;
-	
-
-
 };
 
 //PART A: Overloading the pre increment operator
@@ -42,14 +49,38 @@ rectangleType rectangleType::operator ++ () {
 	rectangleType rectangle;
 	rectangle.dblLength = rectangle.dblLength++;
 	rectangle.dblWidth = rectangle.dblWidth++;
-	return rectangle;
+	return *this;
 }
 
 //post incremenet operator
 rectangleType rectangleType::operator ++ (int) {
+	rectangleType temp = *this;
+	dblLength++;
+	dblWidth++;
+	return temp;
+}
+
+//overloading the pre decrement operator
+rectangleType rectangleType::operator -- () {
 	rectangleType rectangle;
-	rectangle.dblLength = ++rectangle.dblLength;
-	rectangle.dblWidth = ++rectangle.dblWidth;
+	if (dblLength > 0 && dblWidth > 0) {
+		rectangle.dblLength = --dblLength;
+		rectangle.dblWidth = --dblWidth;
+		return rectangle;
+	}
+	else cout << "ERROR\n";
+	return rectangle;
+}
+
+//post decrement operator
+rectangleType rectangleType::operator -- (int u) {
+	rectangleType rectangle;
+	if (dblLength > 0 && dblWidth > 0) {
+		rectangle.dblLength = dblLength--;
+		rectangle.dblWidth = dblWidth--;
+		return rectangle;
+	}
+	else cout << "ERROR\n";
 	return rectangle;
 }
 
@@ -112,36 +143,11 @@ rectangleType rectangleType::operator * (const rectangleType& rectangle) const {
 }
 
 rectangleType rectangleType::operator + (const rectangleType& rectangle) const {
-	rectangleType rectangle1;
-	rectangle1.dblLength = dblLength + rectangle.dblLength;
-	rectangle1.dblWidth = dblWidth + rectangle.dblWidth;
-	return rectangle1;
+	rectangleType result;
+	result.dblLength = dblLength + rectangle.dblLength;
+	result.dblWidth = dblWidth + rectangle.dblWidth;
+	return result;
 }
-
-rectangleType rectangleType::operator -- () {
-	rectangleType rectangle;
-	if (dblLength > 0 && dblWidth > 0) {
-		
-		rectangle.dblLength = --dblLength;
-		rectangle.dblWidth = --dblWidth;
-		return rectangle;
-	}
-	else cout << "ERROR\n";
-	return rectangle;
-}
-
-rectangleType rectangleType::operator -- (int u) {
-	rectangleType rectangle;
-	if (dblLength > 0 && dblWidth > 0) {
-		
-		rectangle.dblLength = dblLength--;
-		rectangle.dblWidth = dblWidth--;
-		return rectangle;
-	}
-	else cout << "ERROR\n";
-	return rectangle;
-}
-
 
 void rectangleType::setDimension(double l, double w) {
 	if (l >= 0)
@@ -176,7 +182,6 @@ rectangleType::rectangleType(double l, double w) {
 }
 
 rectangleType::rectangleType() {
-	cout << "Sinigang\t" << "L2-1\t" << "L2-1.exe" << endl;
 	dblLength = 0;
 	dblWidth = 0;
 	

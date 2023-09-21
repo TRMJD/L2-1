@@ -33,11 +33,15 @@
 '* 09/12/2023   cdefiest  000.002.000 completed parts A and B          *
 '* 09/14/2023   cdefiest  000.003.000 fixed redefining error           *
 '* 09/19/2023   kyabut    000.004.000 part E and heading line          *
+'* 09/20/2023   kyabut    000.005.000 fixed heading line, increment op *
 '* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 #include "rectangleType.h"
 using namespace std;
 
 int main() {
+	//for first line executable code requirement
+	SmallClass obj;
+
 	//create a program that simulates the overloaded functions
 	//in rectangleType.h by showing arithmetic operations
 	rectangleType firstRec(12, 7);
@@ -68,13 +72,15 @@ int main() {
 	}
 	else cout << "Area is the same" << endl;
 
+	//increment functions for the rectangles
 	firstRec++;
 
 	cout << "After increment the length and width of "
 		<< "rectangle1 by one unit, \nrectangle1: "
 		<< firstRec << endl;
 
-	fourthRect = ++thirdRec;
+	thirdRec++;
+	fourthRect++;
 
 	cout << "New dimension of Third Rectangle: " << thirdRec << endl;
 	cout << "New dimension of Fourth Rectangle: " << fourthRect << endl;
