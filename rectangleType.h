@@ -6,6 +6,7 @@
 using namespace std;
 static int instanceCount;
 
+//Small Class for header 
 class SmallClass {
 public: 
 	SmallClass()
@@ -15,8 +16,35 @@ public:
 	}
 };
 
+//* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+//* Class name      : RectangleType                                     *
+//*                                                                     *
+//* Written by      : Clarence Defiesta, Kenjustin Yabut, Allen Dadia   *
+//*                                                                     *
+//* Purpose         : Defines the overloaded functions in order to      *
+//*                   be tested in L2-1.cpp, and sets conditions when   *
+//*                   invalid possible values are present				*
+//*                                                                     *
+//* Inputs          : None in this header					            *
+//*                                                                     *
+//* Outputs         : Return the defined operations						*
+//*                                                                     *
+//* Methods         : rectangleType firstRect(), rectangleType			*
+//* 				  secondRect()					                    *
+//*                                                                     *
+//*---------------------------------------------------------------------*
+//* Change Log:                                                         *
+//*                         Revision                                    *
+//*       Date    Changed  Rel Ver Mod Purpose                          *
+//* 09/12/23      cdefiest 000.000.000 Initial release of program       *
+//* 09/14/23      aidaida  000.001.000 Parts C and D, fixed A and B     *
+//* 09/15/23      kyabut   000.002.000 Part E and header, troubleshoot  *
+//*                                                                     *
+//* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
 class rectangleType {
 public:
+	//Provided operations to overload
 	double area() const;
 	double getLength() const;
 	double getWidth() const;

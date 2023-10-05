@@ -32,8 +32,10 @@
 '* 09/12/2023   cdefiest  000.001.000 Initial release of program       *
 '* 09/12/2023   cdefiest  000.002.000 completed parts A and B          *
 '* 09/14/2023   adaida    000.003.000 fixed redefining error           *
-'* 09/19/2023   kyabut    000.004.000 part E and heading line          *
-'* 09/20/2023   kyabut    000.005.000 fixed heading line, increment op *
+'* 09/15/2023   adaida    000.004.000 parts C and D					   *
+'* 09/15/2023   kyabut    000.005.000 part E and heading line          *
+'* 09/17/2023   kyabut    000.006.000 fixed heading line, increment op *
+'* 09/18/2023   kyabut    000.007.000 fixed improper operations        *
 '* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 #include "rectangleType.h"
 using namespace std;
