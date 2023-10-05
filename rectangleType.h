@@ -4,8 +4,8 @@
 #include<iostream>
 
 using namespace std;
-
 static int instanceCount;
+
 class SmallClass {
 public: 
 	SmallClass()
@@ -22,8 +22,10 @@ public:
 	double getWidth() const;
 	double perimeter() const;
 	void setDimension(double l, double w);
+
 	friend ostream& operator<<(ostream&, const rectangleType&);
 	friend istream& operator>>(istream&, rectangleType&);
+
 	rectangleType operator + (const rectangleType&) const;
 	rectangleType operator - (const rectangleType&) const;
 	rectangleType operator * (const rectangleType&) const;
