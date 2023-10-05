@@ -1,21 +1,3 @@
-#pragma once
-
-#include<fstream>
-#include<iostream>
-
-using namespace std;
-static int instanceCount;
-
-//Small Class for header 
-class SmallClass {
-public: 
-	SmallClass()
-	{
-		if (instanceCount++ == 0)
-			cout << "Sinigang\t" << "L2-1\t" << "L2-1.exe\n" << endl;
-	}
-};
-
 //* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 //* Class name      : RectangleType                                     *
 //*                                                                     *
@@ -41,6 +23,24 @@ public:
 //* 09/15/23      kyabut   000.002.000 Part E and header, troubleshoot  *
 //*                                                                     *
 //* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+#pragma once
+
+#include<fstream>
+#include<iostream>
+
+using namespace std;
+static int instanceCount;
+
+//Small Class for header 
+class SmallClass {
+public: 
+	SmallClass()
+	{
+		if (instanceCount++ == 0)
+			cout << "Sinigang\t" << "L2-1\t" << "L2-1.exe\n" << endl;
+	}
+};
 
 class rectangleType {
 public:

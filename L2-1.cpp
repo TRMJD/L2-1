@@ -1,5 +1,5 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-'* Program name    : L2-1                                              *
+'* Program name    : L2-1 (RectangleType)                              *
 '*                                                                     *
 '* Written by      : Clarence Defiesta, Kenjustin Yabut, Allen Dadia   *
 '*                                                                     *
